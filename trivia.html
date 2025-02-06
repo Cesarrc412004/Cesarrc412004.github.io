@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Estanteria</title>
+    <link rel="stylesheet" href="../CSS/trivia.css">
+    <link rel="icon" href="../MULTIMEDIA/4922690424762641691.jpg">
+</head>
+<body>
+    <video autoplay loop muted>
+        <source src="../MULTIMEDIA/WhatsApp Video 2025-01-16 at 9.01.31 PM.mp4">
+    </video>
+    <header class="header">
+        <div class="logo"> La Estanteria</div>
+        <input type="checkbox" id="toggle">
+        <label for="toggle"> <img class="menu" src="../MULTIMEDIA/4922690424762641691.jpg" alt=" logo menu"> </label><!--aqui va la imagen del logo, ahorita no tiene-->
+
+        <nav class="navigation">
+            <ul>
+                <li> <a href="index.html"> INICIO</a></li>
+                <li> <a href="que_son.html#seccion-principal"> ¿QUÉ SON?</a>
+                    <ul>
+                        <li><a href="que_son.html#mangas">MANGA</a></li>
+                        <li><a href="que_son.html#manhwa">MANHWA</a></li>
+                        <li><a href="que_son.html#manhua">MANHUA</a></li>
+                        <li><a href="que_son.html#comic-venezolano">CÓMIC VENEZOLANO</a></li>
+                    </ul>
+                </li>
+                <li> <a href="diferencias.html"> DIFERENCIAS</a></li>
+                <li> <a href="artistas.html"> ARTISTAS</a></li>
+                <li> <a href="formulario.html"> INGRESAR</a></li>
+                <li><a href="trivia.html">TRIVIA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <section id="p0">
+            <h3>1- ¿De donde es originario el manga?</h3>
+            <label>
+                <input type="radio" value="1" name="p0" onclick="respuesta(0,this)">Corea
+            </label>
+            <label>
+                <input type="radio" value="2" name="p0" onclick="respuesta(0,this)">China
+            </label>
+            <label>
+                <input type="radio" value="3" name="p0" onclick="respuesta(0,this)">Japon
+            </label>
+        </section>
+        <section id="p1">
+            <h3>2- ¿En que sentido se lee el comic Venezolano?</h3>
+            <label>
+                <input type="radio" value="1" name="p1" onclick="respuesta(1,this)">De iquierda a derecha
+            </label>
+            <label>
+                <input type="radio" value="2" name="p1" onclick="respuesta(1,this)">De derecha a izquierda
+            </label>
+            <label>
+                <input type="radio" value="3" name="p1" onclick="respuesta(1,this)">De arriba a abajo
+            </label>
+        </section>
+        <section id="p2">
+            <h3>3- ¿Cual de estos no es a color?</h3>
+            <label>
+                <input type="radio" value="1" name="p2" onclick="respuesta(2,this)">Manhua
+            </label>
+            <label>
+                <input type="radio" value="2" name="p2" onclick="respuesta(2,this)">Manhwa
+            </label>
+            <label>
+                <input type="radio" value="3" name="p2" onclick="respuesta(2,this)">Manga
+            </label>
+        </section>
+        <section id="p3">
+            <h3>4- ¿Cual de estos en un artista destacado en el comic Venezolano?</h3>
+            <label>
+                <input type="radio" value="1" name="p3" onclick="respuesta(3,this)">William Rosales
+            </label>
+            <label>
+                <input type="radio" value="2" name="p3" onclick="respuesta(3,this)">Luis Muñoz
+            </label>
+            <label>
+                <input type="radio" value="3" name="p3" onclick="respuesta(3,this)">Carlos Garcia
+            </label>
+        </section>
+        <section id="p4">
+            <h3>5- ¿Cual es el mas detallado al momento de dibujarse?</h3>
+            <label>
+                <input type="radio" value="1" name="p4" onclick="respuesta(4,this)">Comic Venezolano
+            </label>
+            <label>
+                <input type="radio" value="2" name="p4" onclick="respuesta(4,this)">Manga
+            </label>
+            <label>
+                <input type="radio" value="3" name="p4" onclick="respuesta(4,this)">Manhua
+            </label>
+        </section>
+
+        <button onclick="corregir()">CORREGIR</button>
+        <h2>Respuestas acertadas: <span id="resultado"></span></h2>
+    </div>
+
+    <script src="../JS/trivia.js"></script>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 La Estanteria. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="#" class="social-icon">
+                <img src="../MULTIMEDIA/wpp_icono.jpg" alt="WhatsApp">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="../MULTIMEDIA/fb_icono.jpg" alt="Facebook">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="../MULTIMEDIA/ig_icono.jpg" alt="Instagram">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

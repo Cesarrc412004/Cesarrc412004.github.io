@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #e5e5f7;
+    display: flex;
+    min-height: 100vh;
+    background-image: url(../MULTIMEDIA/fondo_naranja_rayos.jpg);
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+}
+
+/* Nuevo Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(1, 1, 1, 0.7);
+    padding: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.navigation ul {
+    list-style: none;
+}
+
+.header .navigation ul li {
+    float: left;
+    position: relative;
+}
+
+.header .navigation ul li a {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: all .2s ease;
+}
+
+.header .navigation ul li a:hover {
+    background-color: #685cfe;
+}
+
+.header .navigation ul li ul {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: rgb(1, 1, 1, 0.7);
+    display: none;
+}
+
+.header .navigation ul li ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.header .navigation ul li ul li ul {
+    position: absolute;
+    top: 0;
+    right: 300px;
+}
+
+.header .navigation ul li ul li {
+    width: 100%;
+}
+
+.header .navigation ul li:hover > ul {
+    display: initial;
+}
+
+#toggle,
+.header label {
+    display: none;
+    cursor: pointer;
+}
+
+.menu {
+    width: 45px;
+    height: 35px;
+}
+
+@media (max-width:950px) {
+    .header label {
+        display: initial;
+    }
+
+    .header {
+        padding: 20px 10%;
+    }
+
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgb(1, 1, 1, 0.7);
+        display: none;
+    }
+
+    .header .navigation ul li {
+        width: 100%;
+    }
+
+    .header .navigation ul li a {
+        padding: 8px 30px 8px 10px;
+    }
+
+    .header .navigation ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li {
+        background-color: rgb(1, 1, 1, 0.7);
+    }
+
+    .header .navigation ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    #toggle:checked ~ .navigation {
+        display: block;
+    }
+}
+
+/* Formulario Moderno con Fondos Diferenciados */
+.form {
+    background: #2e0033; /* Fondo oscuro elegante */
+    margin: auto;
+    width: 40%;
+    max-width: 90%;
+    padding: 3em;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(255, 63, 129, 0.3); /* Sombra más sutil */
+    text-align: center;
+    margin-top: 70px;
+    backdrop-filter: blur(10px); /* Desenfoque de fondo */
+}
+
+/* Título del Formulario */
+.form_titulo {
+    font-size: 2.5rem;
+    color: #ff3f81; /* Fucsia vibrante */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(255, 63, 129, 0.6);
+}
+
+/* Párrafo del Formulario */
+.form_parrafo {
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+/* Contenedor de los Campos */
+.form_container {
+    margin-top: 2em;
+    display: grid;
+    gap: 2em;
+}
+
+/* Estilo para los Inputs con Fondo Diferenciado */
+.form_group {
+    position: relative;
+    --color: #ff3f81; /* Fucsia */
+}
+
+.form_input {
+    width: 100%;
+    background: #3b0d45; /* Fondo oscuro con toque sofisticado */
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 0.8em 0.5em;
+    border: 2px solid #ff3f81; /* Borde fucsia */
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto de Enfoque en los Inputs */
+.form_input:focus {
+    border-color: #ff0055;
+    background: #51263f; /* Fondo ligeramente más claro al hacer foco */
+    transform: scale(1.02); /* Animación al hacer foco */
+}
+
+/* Etiqueta del Campo con Fondo Sutil */
+.form_label {
+    color: #ff3f81;
+    font-size: 1.1rem;
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: #2e0033; /* Fondo sutil para la etiqueta */
+    padding: 0 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    transform-origin: left center;
+}
+
+/* Efecto cuando se Enfoca o Completa el Campo */
+.form_input:focus + .form_label,
+.form_input:not(:placeholder-shown) + .form_label {
+    transform: translateY(-18px) scale(0.8);
+    color: #ff3f81;
+}
+
+/* Línea Inferior de Enfoque */
+.form_line {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ff3f81;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.form_input:focus ~ .form_line,
+.form_input:not(:placeholder-shown) ~ .form_line {
+    transform: scaleX(1);
+}
+
+/* Estilo del Botón de Enviar */
+.form_submit {
+    background: linear-gradient(45deg, #ff3f81, #a30050); /* Degradado fucsia-vinotinto */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.9em 1.5em;
+    border: none;
+    border-radius: 50px;
+    margin-top: 1.5em;
+    cursor: pointer;
+    transition: all 0.4s ease, transform 0.3s ease;
+}
+
+.form_submit:hover {
+    background: linear-gradient(45deg, #ff0055, #800040);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(255, 63, 129, 0.6);
+}
+
+.form_submit:active {
+    transform: translateY(2px);
+}
+
+/* Estilo para Dispositivos Móviles */
+@media (max-width: 425px) {
+    .form {
+        width: 90%;
+        padding: 2.5em;
+    }
+
+    .form_titulo {
+        font-size: 1.8rem;
+    }
+
+    .form_input {
+        font-size: 1rem;
+        padding: 0.6em 0.3em;
+    }
+
+    .form_submit {
+        font-size: 1rem;
+        padding: 0.7em 1.2em;
+    }
+}
+
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+}
+
+.footer p {
+    margin-bottom: 1em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1em; /* Espacio entre los iconos */
+}
+
+.social-icon img {
+    width: 30px; /* Tamaño de los iconos */
+    transition: transform 0.3s; /* Animación suave */
+}
+
+.social-icon:hover img {
+    transform: scale(1.2); /* Aumentar tamaño al pasar el mouse */
+}
+
+@media (max-width: 600px) {
+    .social-icon img {
+        width: 25px; /* Ajustar tamaño en pantallas pequeñas */
+    }
+}
+
+
+
+
+/* Modificación del Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(1, 1, 1, 0.7); /* Fondo semitransparente */
+    padding: 0px 10%; /* Ajuste del padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra moderna */
+}
+
+.logo {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    position: relative;
+    padding: 20px;
+    transition: color 0.3s ease;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ff3f81; /* Línea fucsia */
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover::after {
+    width: 100%; /* Efecto subrayado moderno */
+}
+
+.navigation a:hover {
+    color: #ff3f81;
+}
+
+#toggle,
+.header label {
+    display: none;
+    cursor: pointer;
+}
+
+.menu {
+    width: 45px;
+    height: 35px;
+}
+
+@media (max-width: 950px) {
+    .header label {
+        display: initial;
+    }
+
+    .header {
+        padding: 20px 10%;
+    }
+
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgb(1, 1, 1, 0.7);
+        display: none;
+    }
+
+    .header .navigation ul li {
+        width: 100%;
+    }
+
+    .header .navigation ul li a {
+        padding: 8px 30px 8px 10px;
+    }
+
+    #toggle:checked ~ .navigation {
+        display: block;
+    }
+}
+
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 768px) {
+    .navigation ul {
+      flex-direction: column;
+      background-color: rgba(26, 0, 30, 0.95);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      display: none; /* Ocultar menú inicialmente */
+    }
+  
+    .navigation ul.show {
+      display: flex; /* Mostrar el menú cuando el toggle está activo */
+    }
+  
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 24px;
+    }
+  
+    #toggle:checked ~ .navigation ul {
+      display: flex; /* Mostrar el menú al activar el toggle */
+    }
+  }

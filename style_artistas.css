@@ -1,0 +1,366 @@
+/* Modificación del Header */ .header { position: fixed; top: 0; left: 0; right: 0; background-color: rgb(1, 1, 1, 0.7); /* Fondo semitransparente */ padding: 0px 10%; /* Ajuste del padding */ display: flex; align-items: center; justify-content: space-between; z-index: 1000; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra moderna */ } .logo { font-size: 25px; text-transform: uppercase; color: #ffffff; font-weight: 700; letter-spacing: 2px; } .navigation ul { list-style: none; display: flex; gap: 20px; } .navigation a { text-decoration: none; color: #ffffff; font-weight: 500; position: relative; padding: 20px; transition: color 0.3s ease; } .navigation a::after { content: ""; position: absolute; left: 0; bottom: -5px; width: 0; height: 2px; background-color: #ff3f81; /* Línea fucsia */ transition: width 0.3s ease; } .navigation a:hover::after { width: 100%; /* Efecto subrayado moderno */ } .navigation a:hover { color: #ff3f81; } #toggle, .header label { display: none; cursor: pointer; } .menu { width: 45px; height: 35px; } @media (max-width: 950px) { .header label { display: initial; } .header { padding: 20px 10%; } .header .navigation { position: absolute; top: 100%; left: 0; right: 0; background-color: rgb(1, 1, 1, 0.7); display: none; } .header .navigation ul li { width: 100%; } .header .navigation ul li a { padding: 8px 30px 8px 10px; } #toggle:checked ~ .navigation { display: block; } }*{margin: 0;
+padding: 0;
+box-sizing: inherit;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+.header{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+background-color: rgb(1, 1, 1, 0.7);
+padding: 0px 10%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+z-index: 1000;
+}
+
+.logo{
+font-size: 25px;
+text-transform: uppercase;
+color: #ffffff;
+font-weight: 700;
+}
+
+.navigation ul{
+list-style: none;
+
+}
+
+.header .navigation ul li{
+float: left;
+position: relative;
+}
+
+.header .navigation ul li a{
+font-size: 18px;
+color: #ffffff;
+text-decoration: none;
+padding: 20px;
+display: block;
+transition: all .2s ease;
+}
+
+.header .navigation ul li a:hover{
+background-color: #685cfe;
+}
+
+.header .navigation ul li ul{
+position: absolute;
+right: 0;
+width: 300px;
+background-color: rgb(1, 1, 1, 0.7);
+display: none;
+}
+
+.header .navigation ul li ul li a{
+font-size: 15px;
+text-transform: capitalize;
+}
+
+
+.header .navigation ul li ul li ul{
+position: absolute;
+top: 0;
+right: 300px;
+}
+
+.header .navigation ul li ul li{
+width: 100%;
+}
+
+.header .navigation ul li:hover > ul{
+display: initial;
+}
+
+#toggle,
+.header label{
+display: none;
+cursor: pointer;
+}
+
+.menu{
+width: 45px;
+height: 35px;
+}
+
+@media (max-width:950px){
+.header label{
+display: initial;
+}
+
+.header{
+padding: 20px 10%;
+}
+
+.header .navigation{
+position: absolute;
+top:100%;
+left: 0;
+right: 0;
+background-color: rgb(1, 1, 1, 0.7);
+display: none;   
+}
+
+.header .navigation ul li{
+    width: 100%;
+}
+.header .navigation ul li a{
+padding: 8px 30px 8px 10px;
+}
+.header .navigation ul li ul{
+position: relative;
+width: 100%;
+left: 0;
+}
+.header .navigation ul li ul li{
+background-color: rgb(1, 1, 1, 0.7);
+}
+.header .navigation ul li ul li ul{
+position: relative;
+width: 100%;
+left: 0;
+}
+#toggle:checked ~ .navigation{
+display: block;
+}
+}
+/* General Styles */
+body {
+margin: 0;
+padding: 0;
+font-family: 'Poppins', sans-serif; /* Tipografía moderna */
+background-color: #0d0d0d; /* Fondo negro */
+color: #ffffff; /* Texto blanco */
+scroll-behavior: smooth;
+overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #1a001e; /* Vinotinto oscuro */
+padding: 10px 20px;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra moderna */
+}
+
+header .logo {
+font-size: 26px;
+font-weight: bold;
+color: #ff3f81; /* Fucsia vibrante */
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+.navigation ul {
+list-style: none;
+display: flex;
+gap: 20px;
+}
+
+.navigation a {
+text-decoration: none;
+color: #ffffff;
+font-weight: 500;
+position: relative;
+transition: color 0.3s ease;
+}
+
+.navigation a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -5px;
+width: 0;
+height: 2px;
+background-color: #ff3f81; /* Línea fucsia */
+transition: width 0.3s ease;
+}
+
+.navigation a:hover::after {
+width: 100%; /* Efecto subrayado moderno */
+}
+
+.navigation a:hover {
+color: #ff3f81;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+}
+
+.footer p {
+    margin-bottom: 1em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.social-icon img {
+    width: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover img {
+    transform: scale(1.2);
+}
+@media (max-width: 600px) {
+    .social-icon img {
+        width: 25px;
+    }
+}
+
+/* Ajustes para el espacio en la parte superior */
+body {
+    padding-top: 100px; /* Desplaza todo el contenido hacia abajo para evitar el header fijo */
+}
+
+/* Estilos generales */
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ff3f81; 
+    margin-bottom: 40px;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    color: #ff3f81; 
+    margin-bottom: 20px;
+  }
+  
+  /* Sección de autores */
+  .autores {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .genero {
+    background-color: #1a001e;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  /* Hacer que las tarjetas estén una al lado de la otra en pantallas grandes */
+  .genero .autor {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ff3f81;
+    border-radius: 15px;
+    width: 300px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(255, 63, 129, 0.3);
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .autor:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(255, 63, 129, 0.6);
+  }
+  
+  .autor img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .autor h4 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #ff3f81;
+  }
+  
+  .autor p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 10px 20px 20px;
+    line-height: 1.6;
+  }
+  
+  /* Establecer el contenedor de los autores para que las tarjetas se alineen horizontalmente en pantallas grandes */
+  .genero {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+  
+  .genero .autor {
+    margin: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  /* Asegurarse de que las tarjetas estén en una sola fila en pantallas grandes */
+  @media (min-width: 768px) {
+    .genero .autor {
+      width: 30%; 
+    }
+  }
+  
+  /* En pantallas pequeñas, las tarjetas ocupan el 100% de ancho */
+  @media (max-width: 767px) {
+    .genero .autor {
+      width: 100%;
+    }
+  }
+/* Media Query para dispositivos pequeños */
+@media (max-width: 768px) {
+    .navigation ul {
+      flex-direction: column;
+      background-color: rgba(26, 0, 30, 0.95);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      display: none; 
+    }
+  
+    .navigation ul.show {
+      display: flex; /* Mostrar el menú cuando el toggle está activo */
+    }
+  
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 24px;
+    }
+  
+    #toggle:checked ~ .navigation ul {
+      display: flex; /* Mostrar el menú al activar el toggle */
+    }
+  }
